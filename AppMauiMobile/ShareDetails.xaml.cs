@@ -26,8 +26,9 @@ public partial class ShareDetails : ContentPage
 
             MainThread.BeginInvokeOnMainThread(() =>
             {
+                long MarketCap = acao.MarketCap;
                 Logotipo.Source = acao.Logourl;
-                Dados.Text = $"{acao.ShortName} Valor: {acao.RegularMarketPrice}";
+                //Dados.Text = $"{acao.ShortName} Valor: {acao.RegularMarketPrice}";
             });
         }
         catch (Exception ex)

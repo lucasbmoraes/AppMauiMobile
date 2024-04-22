@@ -6,8 +6,6 @@ namespace AppMauiMobile
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
@@ -15,8 +13,8 @@ namespace AppMauiMobile
 
         private async void CliqueBuscarInformacoes(object sender, EventArgs e)
         {
-            string simboloAcao = campoSimbolo.Text;
-            ShareDetails shareDetails = new ShareDetails(simboloAcao);
+            string shareSymbol = campoSimbolo.Text;
+            ShareDetails shareDetails = new ShareDetails(shareSymbol);
             await Navigation.PushAsync(shareDetails);
             SemanticScreenReader.Announce(BuscarInformacoes.Text);
         }
