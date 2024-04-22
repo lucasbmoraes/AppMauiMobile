@@ -1,4 +1,8 @@
-﻿namespace AppMauiMobile
+﻿using Dominio.Entidades;
+using Integracao;
+using Newtonsoft.Json;
+
+namespace AppMauiMobile
 {
     public partial class MainPage : ContentPage
     {
@@ -9,16 +13,12 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private async void CliqueBuscarInformacoes(object sender, EventArgs e)
         {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            string simboloAcao = campoSimbolo.Text;
+            ShareDetails shareDetails = new ShareDetails(simboloAcao);
+            await Navigation.PushAsync(shareDetails);
+            SemanticScreenReader.Announce(BuscarInformacoes.Text);
         }
     }
 
