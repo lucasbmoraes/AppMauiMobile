@@ -4,7 +4,7 @@ namespace Integracao
     public class BaseClient
     {
         static readonly HttpClient _client = new HttpClient();
-        string _baseUrl = "https://0hm4pbfn-7029.brs.devtunnels.ms/";
+        string _baseUrl = "https://rvh98qbf-44321.brs.devtunnels.ms/";
 
         public async Task<HttpResponseMessage> GetShare(string shareSymbol)
         {
